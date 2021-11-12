@@ -3,9 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
+import Providers from "./contexts/index.context";
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Providers>
     <App />
-  </React.StrictMode>,
+  </Providers>,
   document.getElementById("root")
 );

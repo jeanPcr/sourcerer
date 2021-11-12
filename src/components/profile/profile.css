@@ -1,0 +1,60 @@
+.profile-container {
+  width: 80%;
+  margin: auto;
+  margin-top: -130px;
+}
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 10px;
+}
+.profile-name {
+  font-size: 2em;
+  color: rgb(93, 93, 93);
+  margin-bottom: 10px;
+}
+.profile-bio {
+}
+.profile-infos {
+  display: flex;
+  width: 100%;
+}
+.profile-image {
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+.analytics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 70%;
+  margin-left: 110px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.analytic-item {
+  background: rgb(229, 236, 229);
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+}
+.analytic-item.follow {
+  background-color: rgba(153, 248, 204, 0.849);
+}
+.analytic-item.refresh {
+  background-color: rgb(74, 235, 159);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.down-chevron {
+  width: 15px;
+  height: 15px;
+  background-image: url("../../assets/down-chevron.png");
+  background-position: center;
+  background-size: cover;
+  margin-left: 5px;
+}

@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+//APOLLO
+import { useQuery } from "@apollo/client";
+import { PROFILE } from "./apollo-client/profile/queries";
+import { REPOSITORIES } from "./apollo-client/repositories/queries";
+//CONTEXTS
+import { useUser } from "./contexts/user.context";
+//COMPONENTS
+import Header from "./components/header/Header";
+import Profile from "./components/profile/Profile";
+import Overview from "./components/overview/Overview";
+import Languages from "./components/languages/Languages";
+import Repositories from "./components/repositories/Repositories";
+import FunFacts from "./components/funFacts/FunFacts";
 
 function App() {
+  const { loading, error, data } = useQuery(PROFILE);
+  const { currentUser, setCurrentUser } = useUser();
+
+  useEffect(() => {
+    if (data) {
+      setCurrentUser(data.user);
+    }
+  }, [data]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Profile />
+      <Overview />
+      <Languages />
+      <FunFacts />
+      <Repositories />
     </div>
   );
 }

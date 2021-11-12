@@ -1,0 +1,11 @@
+.funFacts-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.funFacts-name {
+  font-size: 2em;
+  color: rgb(93, 93, 93);
+  margin-bottom: 10px;
+}
